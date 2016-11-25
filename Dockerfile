@@ -6,7 +6,7 @@ ADD do_not_use.yml /elasticsearch/config/elasticsearch.yml
 
 # Install Elasticsearch plug-ins
 RUN /elasticsearch/bin/elasticsearch-plugin install io.fabric8:elasticsearch-cloud-kubernetes:5.0.1 --verbose && \
-    /elasticsearch/bin/elasticsearch-plugin install x-pack:5.0.1 --verbose
+    /elasticsearch/bin/elasticsearch-plugin install x-pack --verbose
 
 # Override elasticsearch.yml config, otherwise plug-in install will fail
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
